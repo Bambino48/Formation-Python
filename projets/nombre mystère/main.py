@@ -7,7 +7,7 @@ Bien entendu, tu as droit un nombre limit d'essais pour trouver le nombre.
 
 from random import randint
 
-mystere = randint(1, 10)
+mystere = randint(1, 100)
 nbre_essais = 5
 choix = "o"
 
