@@ -13,39 +13,39 @@ choix = "o"
 
 print("---------------------------------------------------------------- Jeu du monbre mystère ------------------------------------------------------------")
 
-print("Vous allez entrer des nombres entre 1 et 100 et cela 3 fois de suite. \nSi le nombre entré est égal à celui de l'ordinateur vous avez gagné sinon dans le cas vous avez perdu.")
+print("Vous allez entrer des nombres entre 1 et 100 et cela 5 fois de suite. \nSi le nombre entré est égal à celui de l'ordinateur vous avez gagné sinon dans le cas vous avez perdu.")
 
 while choix == "o":
 
     for essai in range(1, nbre_essais + 1):
 
         while True:
-            print("Entrer un nombre entre 1 et 10.")
+            print("Entrer un nombre entre 1 et 100.")
             try:
                 nombre = int(input(f"Essai {essai} >>> "))
                 if 1 <= nombre <= 100:
                     break
                 else:
-                    print("Veillez entrer un nombre entre 1 et 10.")
+                    print("Veillez entrer un nombre entre 1 et 100.")
             except ValueError:
                 print("Erreur, vous devez entrer un chiffre.")
 
-    if nombre == mystere:
-        print("Bravo, vous avez gagné 🎉🎉🎉")
-        print(f"Le nombre mystère est : {mystere}")
-        break
-    else:
-        print("Désolé, vous avez perdu ❌")
-    if essai < nbre_essais:
-        print(f"Il vous reste {nbre_essais - essai}.")
-    if (nbre_essais - essai) == 0:
-        print("Pour récommencer une nouvel partie tapez 'o' et pour arrêter tapez 'n'.")
-        choix = input(">>> ")
-        if choix == "o":
-            continue
-        elif choix == "n":
-            print("Merci pour votre participation et la prochaine.")
+        if nombre == mystere:
+            print("Bravo, vous avez gagné 🎉🎉🎉")
+            print(f"Le nombre mystère est : {mystere}")
             break
         else:
-            print("Choix invalide.")
-            continue
+            print("Désolé, vous avez perdu ❌")
+        if essai < nbre_essais:
+            print(f"Il vous reste {nbre_essais - essai} essai(s).")
+        if (nbre_essais - essai) == 0:
+            print("Pour récommencer une nouvel partie tapez 'o' et pour arrêter tapez 'n'.")
+            choix = input(">>> ")
+            if choix == "o":
+                continue
+            elif choix == "n":
+                print("Merci pour votre participation et la prochaine.")
+                break
+            else:
+                print("Choix invalide.")
+                continue
